@@ -1,0 +1,36 @@
+<div class="container" style="min-height: 80vh;">
+  <h1>Add Product</h1>
+  <form #form="ngForm" (ngSubmit)="addProduct()">
+  <div class="row" style="padding: 20px; border-radius: 5px; box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;">
+      <div class="col-5 d-flex align-items-center">
+          <img src="https://cdn.pixabay.com/photo/2015/05/31/12/50/shop-791582_1280.jpg" alt="..."
+              class="img-fluid">
+      </div>
+      <div class="col-6">
+          <div class="mb-2">
+              <label for="name" class="form-label"> Name</label>
+              <input type="text" class="form-control" id="name" name="prodname" placeholder="Product name" [(ngModel)]="newProduct.name">
+          </div>
+          <div class="mb-2">
+              <label for="type" class="form-label"> Type</label>
+              <input type="text" class="form-control" id="type" name="type" placeholder="Product type" [(ngModel)]="newProduct.type">
+          </div>
+          <div class="mb-2">
+              <label for="name" class="form-label"> Price</label>
+              <input type="number" class="form-control" id="price" name="price" placeholder="Product price" [(ngModel)]="newProduct.price">
+          </div>
+          <div class="mb-2">
+              <label for="color" class="form-label"> Color</label>
+              <input type="text" class="form-control" id="color" name="color" placeholder="Product color" [(ngModel)]="newProduct.color">
+          </div>
+          <div class="mb-2">
+              <label for="imgUrl" class="form-label"> Image URL</label>
+              <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Product image URL" [(ngModel)]="newProduct.imgUrl">
+          </div>
+          <div class="mb-2">
+              <button type="submit" class="btn btn-primary">Add Product</button>
+        </div>
+      </div>
+  </div>
+</form>
+</div>

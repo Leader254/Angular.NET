@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['products']" style="font-family: cursive; font-weight: bold;">Sam's Shop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['products']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['products','add']">Add Product</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" name="search">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Welcome
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li *ngIf="!isLoggedIn" class="nav-item">
+                <a class="nav-link" [routerLink]="['/login']">Login</a>
+              </li>
+              <li *ngIf="!isLoggedIn" class="nav-item">
+                <a class="nav-link" [routerLink]="['register']">Register</a>
+              </li>
+              <li *ngIf="isLoggedIn" class="nav-item">
+                <a class="dropdown-item" (click)="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+      </form>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<footer>
+  <div class="footer d-flex justify-content-around">
+    <p>Made with <span class="heart">❤</span> by Sam</p>
+  </div>
+</footer>
